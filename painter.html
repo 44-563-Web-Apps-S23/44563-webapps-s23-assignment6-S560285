@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>
+        
+            basic java script and interact with the DOM
+        
+        </title>
+    
+    </head>
+ 
+
+    <body>
+
+<h2>
+    
+    Painter entry Venkata Mallikharjuna Rao Pola
+
+</h2>
+
+
+<form>
+    <label for="form_painterdata"> The hidden painter name</label>
+    <input type ="password" id="password" name="form_painterdata" min=5 max=25 step=2 value="Monet"> <br>
+    <label for="form_check">Guess the painter</label>
+    <input type ="text" id="check" name="form_check" min=5 max=25 step=2> <br>
+    <input type="button" onclick="checkPainter()" value="Check the guess">
+</form>
+
+<p 
+id="result">
+ result 
+</p>
+<script> 
+
+  var good=0
+  var oops=0
+
+
+function checkPainter(){
+ console.log("Getting form values")
+
+
+    m = document.getElementById("password").value
+    n = document.getElementById("check").value   
+    out = document.getElementById("result")
+    if(m==n){
+        alert("You got it right")
+        good=good+1
+    } 
+    else { 
+        oops=oops+1
+        alert('Sorry')
+    }
+    out.innerHTML ="Right count: " +good+" Wrong count: "+oops
+}
+
+
+</script>
+
+</body>
+</html> 
