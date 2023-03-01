@@ -59,5 +59,35 @@ function checkPainter(){
 
 </script>
 
+<div id="imageinformation">
+    <img src="ochna.jpg" onclick="selectImage()" width="100px" height ="100px">
+</div>
+<script type="text/javascript">
+
+    let useImage=1;
+
+    function selectImage()
+    {
+        out=document.getElementById("imageinformation")
+    switch(useImage){
+
+    case 1: 
+
+        out.innerHTML='<img src="Lantana.jpg" width="100px" height="100px">';
+        useImage++;
+        break;
+    case 2: 
+        out.innerHTML='<img src="petunia.jpg" width="100px" height="100px">';
+        useImage++;
+        break;
+    case 3: 
+        out.innerHTML='<img src="ochna.jpg" width="100px" height="100px">';
+        useImage=1;
+        break;
+    }
+}
+</script>
+
+
 </body>
 </html> 
