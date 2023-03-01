@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h2>Venkata Mallikharjuna rao pola shows currency conversions</h2>
+
+<form>
+    <label for="base">Enter base amount</label>
+    <input type ="number" id="base" name="base" min=10 max=50 step=2 value=50> <br>
+
+    <label for="Conver">Enter the conversion rate</label>
+    <input type ="text" id="conver" name="conver" value="35" autofocus> <br>
+
+    <button  type="button" onclick="convert()">Show conversions </button>
+</form>
+
+
+<p id="result"></p>
+
+<script type = "text/javascript">
+    function convert()
+    {
+        const bv2= document.getElementById("base").value;
+        const cv2=document.getElementById("conver").value;
+        let toShow="";
+        for(let i=1;i<=5;i++)
+        {
+            const vl= bv2*Math.pow(2,i-1);
+            const cvn= vl*cv2;
+            toShow+= vl +" is " + cvn + "; ";
+        }
+        document.getElementById("result").innerHTML=" Conversions are : " +toShow;
+    }
+
+    function chooseOp(){
+        const bv2= document.getElementById("base").value;
+        const cv2=document.getElementById("conver").value;
+        let op=document.querySelector('input[name="operation"]:checked').value;
+        let rem,rela="";
+        switch(op){
+            case "maximum": 
+                rem=Math.max(bv2,cv2);
+                rela=`The  maximum of ${bv2} and ${cv2} is ${rem}`;
+                break;
+            case "minimum":
+                rem=Math.min(bv2,cv2);
+                rela=`The minimum of ${bv2} and ${cv2} is ${rem}`;
+                break;
+            case "mean":
+                rem= (Number(bv2)+Number(cv2))/2;
+                rela=`The Average of ${bv2} and ${cv2} is ${rem}`;
+                break;
+        } 
+        document.getElementById("result").innerHTML=rela;
+    }
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html> 
