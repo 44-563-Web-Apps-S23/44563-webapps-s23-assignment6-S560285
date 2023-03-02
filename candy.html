@@ -13,52 +13,79 @@
 
 
 <form>
+
     <label for="darkco">
+
      <input type="checkbox" value="True" id="darkco">Dark Chocolate
     </label>
+
     <br>
- 
+
     <label for="nuts">
-     <input type="checkbox" value="True" id="nuts">Nuts
+
+        <input type="checkbox" value="True" id="nuts">Nuts
     </label>
+
     <br>
  
+    
     <label for="chewy">
-     <input type="checkbox" value="false" id="chewy">Chewy
+    
+        <input type="checkbox" value="false" id="chewy">Chewy
     </label>
+    
     <br>
     <input type="button" onclick="selectBox()" value="Select a box">
  
- </form>
- <br>
- <form>
-     <label for="siz">
+ 
+</form>
+
+<br>
+
+<form>
+ 
+    <label for="siz">
          <input type="text" value="size" id="siz">Enter the size
      </label>
-    <br>
  
-    <label for="pri">
-     <input type="text" id="pri">Enter price
+     <br>
+ 
+ 
+     <label for="pri">
+ 
+        <input type="text" id="pri">Enter price
    </label><br>
+ 
    <input type="button" onclick="updateBox()" value="Update the box">
  
- </form>
- <p id="result"></p>
+ 
+</form>
+
+<p id="result"></p>
  
  
- <script type="text/javascript"> 
-    let my_candy_box={};
-    function selectBox(){
-     my_candy_box = {};
-     my_candy_box.dark=document.getElementById("darkco").checked;
+
+<script type="text/javascript"> 
+
+let my_candy_box={};
+
+function selectBox(){
+
+    my_candy_box = {};
+
+    my_candy_box.dark=document.getElementById("darkco").checked;
      my_candy_box.nuts=document.getElementById("nuts").checked;
      my_candy_box.chewy=document.getElementById("chewy").checked;
      out = document.getElementById("result")
      out.innerHTML=JSON.stringify(my_candy_box);
+  
     }
+   
     function updateBox(){
-         let size=document.getElementById("siz").value;
-         let price=document.getElementById("pri").value;
+   
+        let size=document.getElementById("siz").value;
+   
+        let price=document.getElementById("pri").value;
          my_candy_box["size"]=size;
          my_candy_box["price"]=price;
          out= document.getElementById("result")
