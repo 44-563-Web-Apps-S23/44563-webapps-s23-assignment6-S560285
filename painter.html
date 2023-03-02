@@ -37,6 +37,8 @@ id="result">
   var good=0
   var oops=0
 
+  var cnt=0
+
 
 function checkPainter(){
  console.log("Getting form values")
@@ -51,7 +53,14 @@ function checkPainter(){
     } 
     else { 
         oops=oops+1
+        cnt=cnt+1
+        if(cnt>10){
+           aler( Sorry, ran out of guesses)
+        }
+        else 
+        {
         alert('Sorry')
+        }
     }
     out.innerHTML ="Right count: " +good+" Wrong count: "+oops
 }
@@ -66,6 +75,9 @@ function checkPainter(){
 <script type="text/javascript">
 
     let useImage=1;
+
+
+
 
     function selectImage()
     {
