@@ -25,7 +25,7 @@
     <input type ="password" id="password" name="form1_painterdata" min=5 max=25 step=2 value="Monet"> <br>
     <label for="form2_checkdata">Guess the painter</label>
     <input type ="text" id="check" name="form2_checkdata" min=5 max=25 step=2> <br>
-    <input type="button" onclick="checkPainter()" value="Check the guess">
+    <input type="button" class="btn btn-primary" onclick="checkPainter()" value="Check the guess">
 </form>
 
 <p 
@@ -73,32 +73,25 @@ function checkPainter(){
     <img src="ochna.jpg" onclick="selectImage()" width="100px" height ="100px">
 </div>
 <script type="text/javascript">
-
-    let useImage=1;
-
-
-
-
+    var useImage=1;
     function selectImage()
     {
-        out=document.getElementById("imageinformation")
-    switch(useImage){
-
-    case 1: 
-
-        out.innerHTML='<img src="Lantana.jpg" width="100px" height="100px">';
-        useImage=2;
-        break;
-    case 2: 
-        out.innerHTML='<img src="Phlox paniculata.jpg" width="100px" height="100px">';
-        useImage=3;
-        break;
-    case 3: 
-        out.innerHTML='<img src="ochna.jpg" width="100px" height="100px">';
-        useImage=1;
-        break;
+        switch(useImage)
+        {
+            case 1:
+                document.getElementById("imageinformation").innerHTML='<img src="petunia.jpg" onclick="selectImage()" width="100px" height="100px">';
+                useImage=2;
+                break;
+            case 2:
+                document.getElementById("imageinformation").innerHTML='<img src="Lantana.jpg" onclick="selectImage()" width="100px" heigth="100px">';
+                useImage=3;
+                break;
+            case 3:
+                document.getElementById("imageinformation").innerHTML='<img src="ochna.jpg" onclick="selectImage()" width="100px" height="100px">';
+                useImage=1;
+                break;
+        }
     }
-}
 </script>
 
 
